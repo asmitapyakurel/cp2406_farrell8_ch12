@@ -9,12 +9,11 @@ public class DebugTwelve3
       int num, result;
       int[] array = {12, 4, 6, 8};
       inStr = JOptionPane.showInputDialog(null, "Enter a number ");
-      num = Integer.parse(inStr);
+      num = Integer.parseInt(inStr);
       try
       {
-         for(int x = 0; x < array.length; ++x)
-         {
-            result =  array[x] / num;
+         for (int i : array) {
+            result = i / num;
             JOptionPane.showMessageDialog(null, "Result of division is " + result);
             result = array[num];
             JOptionPane.showMessageDialog(null, "Result accessing array is " + result);
@@ -24,7 +23,7 @@ public class DebugTwelve3
       {
           JOptionPane.showMessageDialog(null, "Arithmetic error - division by 0");   
       }
-      catch(IndexException error)
+      catch(IndexOutOfBoundsException error)
       {
          JOptionPane.showMessageDialog(null, "Index error - subscript out of range");
       }
